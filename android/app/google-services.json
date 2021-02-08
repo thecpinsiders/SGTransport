@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "506829014941",
+    "project_id": "stadprojectdb",
+    "storage_bucket": "stadprojectdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506829014941:android:8b24cec4855b6b77d69174",
+        "android_client_info": {
+          "package_name": "com.example.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506829014941-ttfqoso452fq9anf8lh4tk6dtif1b455.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARGvQTPFWqXw8vFwtt_GndgWBazorEDQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506829014941-ttfqoso452fq9anf8lh4tk6dtif1b455.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
