@@ -27,7 +27,7 @@ Future<void> _signOut() async {
 
 TextEditingController newpassController = new TextEditingController();
 TextEditingController newpassController2 = new TextEditingController();
-String _password, _cfmpassword,_error;
+String _password, _cfmpassword, _error;
 
 class Profile extends StatefulWidget {
   Profile({Key key}) : super(key: key);
@@ -57,25 +57,6 @@ class _ProfileState extends State<Profile> {
                     letterSpacing: 2.0,
                     fontWeight: FontWeight.w400),
               ),
-              // Container(
-              //   decoration: BoxDecoration(
-              //       image: DecorationImage(
-              //           image: NetworkImage("add you image URL here "),
-              //           fit: BoxFit.cover)),
-              //   // child: Container(
-              //   //   width: double.infinity,
-              //   //   height: 200,
-              //   //   child: Container(
-              //   //     alignment: Alignment(0.0,2.5),
-              //   //     child: CircleAvatar(
-              //   //       backgroundImage: NetworkImage(
-              //   //           "Add you profile DP image URL here "
-              //   //       ),
-              //   //       radius: 60.0,
-              //   //     ),
-              //   //   ),
-              //   // ),
-              // ),
               SizedBox(
                 height: 30,
               ),
@@ -159,18 +140,6 @@ class _ProfileState extends State<Profile> {
                   onSaved: (input) => _cfmpassword = input,
                 ),
               ),
-              //           Container(
-              //       width: 600,
-              //       height: 70,
-              //       child: TextField(
-              //         controller: newpassController2,
-              //         obscureText: true,
-              //         decoration: InputDecoration(
-              //           border: OutlineInputBorder(),
-              //           labelText: 'Confirm New Password',
-              //         ),
-              //       ),
-              // ),
               showAlert(),
               Container(
                 height: 50,
@@ -242,77 +211,12 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: [
-              //     RaisedButton(
-              //       onPressed: (){
-              //       },
-              //       shape:  RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(80.0),
-              //       ),
-              //       child: Ink(
-              //         decoration: BoxDecoration(
-              //           gradient: LinearGradient(
-              //               begin: Alignment.centerLeft,
-              //               end: Alignment.centerRight,
-              //               colors: [Colors.pink,Colors.redAccent]
-              //           ),
-              //           borderRadius: BorderRadius.circular(30.0),
-              //         ),
-              //         child: Container(
-              //           constraints: BoxConstraints(maxWidth: 100.0,maxHeight: 40.0,),
-              //           alignment: Alignment.center,
-              //           child: Text(
-              //             "Contact me",
-              //             style: TextStyle(
-              //                 color: Colors.white,
-              //                 fontSize: 12.0,
-              //                 letterSpacing: 2.0,
-              //                 fontWeight: FontWeight.w300
-              //             ),
-              //           ),
-              //         ),
-              //       ),
-              //     ),
-              //     RaisedButton(
-              //       onPressed: (){
-              //       },
-              //       shape:  RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(80.0),
-              //       ),
-              //       child: Ink(
-              //         decoration: BoxDecoration(
-              //           gradient: LinearGradient(
-              //               begin: Alignment.centerLeft,
-              //               end: Alignment.centerRight,
-              //               colors: [Colors.pink,Colors.redAccent]
-              //           ),
-              //           borderRadius: BorderRadius.circular(80.0),
-              //         ),
-              //         child: Container(
-              //           constraints: BoxConstraints(maxWidth: 100.0,maxHeight: 40.0,),
-              //           alignment: Alignment.center,
-              //           child: Text(
-              //             "Portfolio",
-              //             style: TextStyle(
-              //                 color: Colors.white,
-              //                 fontSize: 12.0,
-              //                 letterSpacing: 2.0,
-              //                 fontWeight: FontWeight.w300
-              //             ),
-              //           ),
-              //         ),
-              //       ),
-              //     )
-              //   ],
-              // )
             ],
           ),
-          
         ));
   }
-    Widget showAlert() {
+
+  Widget showAlert() {
     if (_error != null) {
       return Container(
         width: double.infinity,

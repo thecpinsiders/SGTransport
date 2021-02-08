@@ -256,7 +256,6 @@ class _BusArrivalState extends State<BusArrival> {
                 setState(() {
                   loadArriving();
                 });
-                // Navigator.push(context, MaterialPageRoute(builder: (_) => MyApp()));
               },
               child: Text(
                 'Search',
@@ -281,13 +280,15 @@ class _BusArrivalState extends State<BusArrival> {
                       formattedtime = format.format(now);
 
                       String load;
-                       if(snapshot.data.service[index].nextbus.load == "SEA"){
-                         load = "Seats Available";
-                       } else if(snapshot.data.service[index].nextbus.load == "SDA"){
-                         load = "Standing Available";
-                       } else if(snapshot.data.service[index].nextbus.load == "LSD") {
-                         load = "Limited Standing";
-                       }
+                      if (snapshot.data.service[index].nextbus.load == "SEA") {
+                        load = "Seats Available";
+                      } else if (snapshot.data.service[index].nextbus.load ==
+                          "SDA") {
+                        load = "Standing Available";
+                      } else if (snapshot.data.service[index].nextbus.load ==
+                          "LSD") {
+                        load = "Limited Standing";
+                      }
                       return new Card(
                         child: new Column(
                           children: <Widget>[
@@ -298,11 +299,9 @@ class _BusArrivalState extends State<BusArrival> {
                                 "Service : " +
                                     snapshot.data.service[index].serviceno,
                                 textAlign: TextAlign.left),
-
                             new Text("Arrival time : " + formattedtime,
                                 textAlign: TextAlign.left),
-                            new Text(
-                                "Load : " + load,
+                            new Text("Load : " + load,
                                 textAlign: TextAlign.left),
                             new Text(
                                 "WAB / NWAB : " +
@@ -316,8 +315,7 @@ class _BusArrivalState extends State<BusArrival> {
                           ],
                         ),
                       );
-                    }
-                  );
+                    });
               } else if (snapshot.data == null) {
                 return Text(
                     "Please enter a valid bus stop code to see arrival timings");
@@ -334,4 +332,3 @@ class _BusArrivalState extends State<BusArrival> {
     );
   }
 }
-

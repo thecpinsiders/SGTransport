@@ -63,10 +63,6 @@ Future loadBusstop() async {
   print("jsonoperate value " + jsonOperate);
   final jsonResponse = json.decode(jsonOperate);
   BusStopData busstop = new BusStopData.fromJson(jsonResponse);
-  // print(arrival);
-  // print(arrival.busstopcode);
-  // print(arrival.service[1].serviceno);
-  // //print(arrival.value[1].operators);
   return busstop;
 }
 
@@ -133,7 +129,6 @@ class _SearchBusStopState extends State<SearchBusStop> {
                 setState(() {
                   loadBusstop();
                 });
-                // Navigator.push(context, MaterialPageRoute(builder: (_) => MyApp()));
               },
               child: Text(
                 'Search',
@@ -149,60 +144,53 @@ class _SearchBusStopState extends State<SearchBusStop> {
                     shrinkWrap: true,
                     itemCount: 1,
                     itemBuilder: (BuildContext context, int index) {
-                  for(index=0;index < snapshot.data.value.length;index++){
-                      final busstopname = bsnameController.text.toString();
-                     if (snapshot.data.value[index].description == busstopname) { 
-                        return new Card(
-                          child: new Column(
-                            children: <Widget>[
-                              new Text(
-                                  "Bus Stop Name : " +
-                                      snapshot.data.value[index].description,
-                                  textAlign: TextAlign.left),
-                              new Text(
-                                  "Road Name: " +
-                                      snapshot.data.value[index].roadname,
-                                  textAlign: TextAlign.left),
-                              new Text(
-                                  "Bus Stop Code : " +
-                                      snapshot.data.value[index].busstopcode,
-                                  textAlign: TextAlign.left),
-                              new InkWell(
-                                child: Text(
-                                  "Click to view in google maps ",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      color: Colors.green),
+                      for (index = 0;
+                          index < snapshot.data.value.length;
+                          index++) {
+                        final busstopname = bsnameController.text.toString();
+                        if (snapshot.data.value[index].description ==
+                            busstopname) {
+                          return new Card(
+                            child: new Column(
+                              children: <Widget>[
+                                new Text(
+                                    "Bus Stop Name : " +
+                                        snapshot.data.value[index].description,
+                                    textAlign: TextAlign.left),
+                                new Text(
+                                    "Road Name: " +
+                                        snapshot.data.value[index].roadname,
+                                    textAlign: TextAlign.left),
+                                new Text(
+                                    "Bus Stop Code : " +
+                                        snapshot.data.value[index].busstopcode,
+                                    textAlign: TextAlign.left),
+                                new InkWell(
+                                  child: Text(
+                                    "Click to view in google maps ",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                        color: Colors.green),
+                                  ),
+                                  onTap: () => launch(
+                                      'https://maps.google.com/?q=@' +
+                                          snapshot.data.value[index].latitude
+                                              .toString() +
+                                          "," +
+                                          snapshot.data.value[index].longitude
+                                              .toString()),
                                 ),
-                                onTap: () => launch(
-                                    'https://maps.google.com/?q=@' +
-                                        snapshot.data.value[index].latitude
-                                            .toString() +
-                                        "," +
-                                        snapshot.data.value[index].longitude
-                                            .toString()),
-                              ),                  
-                            ].toList(),           
-                          ),          
-                        );
-                      } else if(busstopname == ""){
-                        new Text("Please enter a bus stop name",
-                            textAlign: TextAlign.left);
-                      } 
-                    //    if (busstopname == "") {
-                    //     return Text(
-                    // "Please enter a valid bus stop name to see bus stop info");
-                    //   } else if (busstopname != snapshot.data.value[index].description) {
-                    //     new Text("Please enter a bus stop name",
-                    //         textAlign: TextAlign.left);
-                    //   }
-                    //   break;
-                    }
-                    
-                    }
-                    );
+                              ].toList(),
+                            ),
+                          );
+                        } else if (busstopname == "") {
+                          new Text("Please enter a bus stop name",
+                              textAlign: TextAlign.left);
+                        }
+                      }
+                    });
               } else if (snapshot.data == null) {
                 return Text(
                     "Please enter a valid bus stop name to see bus stop info");
