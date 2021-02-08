@@ -29,9 +29,9 @@ class _homepageState extends State<homepage> {
                       color: Colors.white,
                     ),
                     onPressed: () {
-                       Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => Profile()));
-                   },
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => Profile()));
+                    },
                   )
                 ],
                 bottom: TabBar(
