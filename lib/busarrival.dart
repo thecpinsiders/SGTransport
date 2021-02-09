@@ -294,24 +294,48 @@ class _BusArrivalState extends State<BusArrival> {
                           children: <Widget>[
                             new Text(
                                 "Bus Stop Code : " + snapshot.data.busstopcode,
-                                textAlign: TextAlign.left),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold)),
                             new Text(
                                 "Service : " +
                                     snapshot.data.service[index].serviceno,
-                                textAlign: TextAlign.left),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold)),
                             new Text("Arrival time : " + formattedtime,
-                                textAlign: TextAlign.left),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold)),
                             new Text("Load : " + load,
-                                textAlign: TextAlign.left),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold)),
                             new Text(
                                 "WAB / NWAB : " +
                                     snapshot
                                         .data.service[index].nextbus.feature,
-                                textAlign: TextAlign.left),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold)),
                             new Text(
                                 "Bus Type: " +
                                     snapshot.data.service[index].nextbus.type,
-                                textAlign: TextAlign.left),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold)),
                           ],
                         ),
                       );

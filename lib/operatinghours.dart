@@ -126,35 +126,35 @@ class _OperatingHoursPageState extends State<OperatingHoursPage> {
                           new Text(
                               "Bus Service Number : " +
                                   snapshot.data.value[index].serviceno,
-                              textAlign: TextAlign.left),
+                              textAlign: TextAlign.left ,style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold)),
                           new Text(
                               "BusStopCode : " +
                                   snapshot.data.value[index].busStopCode,
-                              textAlign: TextAlign.left),
+                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
                           new Text(
                               "First Bus Timing On Weekdays At This Bus Stop : " +
                                   snapshot.data.value[index].wd_FirstBus,
-                              textAlign: TextAlign.left),
+                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
                           new Text(
                               "Last Bus Timing On Weekdays At This Bus Stop : " +
                                   snapshot.data.value[index].wd_LastBus,
-                              textAlign: TextAlign.left),
+                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
                           new Text(
                               "First Bus Timing On Saturday At This Bus Stop : " +
                                   snapshot.data.value[index].sat_FirstBus,
-                              textAlign: TextAlign.left),
+                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
                           new Text(
                               "Last Bus Timing On Saturday At This Bus Stop : " +
                                   snapshot.data.value[index].sat_LastBus,
-                              textAlign: TextAlign.left),
+                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
                           new Text(
                               "First Bus Timing On Sunday At This Bus Stop : " +
                                   snapshot.data.value[index].sun_FirstBus,
-                              textAlign: TextAlign.left),
+                              textAlign: TextAlign.left,style: TextStyle(color: Colors.black, fontSize: 15,)),
                           new Text(
                               "Last Bus Timing On Sunday At This Bus Stop : " +
                                   snapshot.data.value[index].sun_LastBus,
-                              textAlign: TextAlign.left),
+                              textAlign: TextAlign.left,style: TextStyle(color: Colors.black, fontSize: 15,)),
                         ],
                       ),
                     );

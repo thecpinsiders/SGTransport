@@ -73,17 +73,6 @@ class _ProfileState extends State<Profile> {
                 height: 10,
               ),
               Text(
-                "SGTransport!",
-                style: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.black45,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w300),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
                 "Email:" + FirebaseAuth.instance.currentUser.email,
                 style: TextStyle(
                     fontSize: 18.0,
@@ -93,6 +82,17 @@ class _ProfileState extends State<Profile> {
               ),
               SizedBox(
                 height: 50,
+              ),
+             Text(
+                "Change Password",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.black,
+                    letterSpacing: 2.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 25,
               ),
               Container(
                 padding:
