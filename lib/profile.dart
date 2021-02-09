@@ -75,13 +75,13 @@ class _ProfileState extends State<Profile> {
               Text(
                 "Email:" + FirebaseAuth.instance.currentUser.email,
                 style: TextStyle(
-                    fontSize: 18.0,
-                    color: Colors.black45,
+                    fontSize: 25.0,
+                    color: Colors.blueGrey,
                     letterSpacing: 2.0,
-                    fontWeight: FontWeight.w300),
+                    fontWeight: FontWeight.w400),
               ),
               SizedBox(
-                height: 50,
+                height: 25,
               ),
              Text(
                 "Change Password",
