@@ -124,41 +124,32 @@ class _OperatingHoursPageState extends State<OperatingHoursPage> {
                       child: new Column(
                         children: <Widget>[
                           new Text(
-                              "Bus Service Number : " +
+                              "Bus Service : " +
                                   snapshot.data.value[index].serviceno,
                               textAlign: TextAlign.left ,style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold)),
                           new Text(
-                              "BusStopCode : " +
+                              "Bus Stop : " +
                                   snapshot.data.value[index].busStopCode,
                               textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
                           new Text(
-                              "First Bus Timing On Weekdays At This Bus Stop : " +
-                                  snapshot.data.value[index].wd_FirstBus,
-                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
+                              "Weekday : " + snapshot.data.value[index].wd_FirstBus + " - " + snapshot.data.value[index].wd_LastBus,
+                              textAlign: TextAlign.left, 
+                              style: TextStyle(color: Colors.green, fontSize: 15,)),
                           new Text(
-                              "Last Bus Timing On Weekdays At This Bus Stop : " +
-                                  snapshot.data.value[index].wd_LastBus,
-                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
+                              "Saturday : " +
+                                  snapshot.data.value[index].sat_FirstBus + " - " + snapshot.data.value[index].sat_LastBus,
+                              textAlign: TextAlign.left, 
+                              style: TextStyle(color: Colors.red, fontSize: 15,)),
                           new Text(
-                              "First Bus Timing On Saturday At This Bus Stop : " +
-                                  snapshot.data.value[index].sat_FirstBus,
-                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
-                          new Text(
-                              "Last Bus Timing On Saturday At This Bus Stop : " +
-                                  snapshot.data.value[index].sat_LastBus,
-                              textAlign: TextAlign.left, style: TextStyle(color: Colors.black, fontSize: 15,)),
-                          new Text(
-                              "First Bus Timing On Sunday At This Bus Stop : " +
-                                  snapshot.data.value[index].sun_FirstBus,
-                              textAlign: TextAlign.left,style: TextStyle(color: Colors.black, fontSize: 15,)),
-                          new Text(
-                              "Last Bus Timing On Sunday At This Bus Stop : " +
-                                  snapshot.data.value[index].sun_LastBus,
-                              textAlign: TextAlign.left,style: TextStyle(color: Colors.black, fontSize: 15,)),
+                              "Sunday : " +
+                                  snapshot.data.value[index].sun_FirstBus + " - " + snapshot.data.value[index].sun_LastBus,
+                              textAlign: TextAlign.left,
+                              style: TextStyle(color: Colors.blue, fontSize: 15,)),
                         ],
                       ),
                     );
-                  });
+                  }
+                  );
               //  Text(snapshot.data.value[1].serviceno),
               //  Text(snapshot.data.value[1].serviceno)
               //Text(snapshot.data.operator);

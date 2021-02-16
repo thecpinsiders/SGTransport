@@ -136,6 +136,9 @@ class _SearchBusStopState extends State<SearchBusStop> {
               ),
             ),
           ),
+          SizedBox(
+            height: 10,
+          ),
           FutureBuilder(
             future: loadBusstop(),
             builder: (context, snapshot) {
@@ -154,17 +157,20 @@ class _SearchBusStopState extends State<SearchBusStop> {
                             child: new Column(
                               children: <Widget>[
                                 new Text(
-                                    "Bus Stop Name : " +
-                                        snapshot.data.value[index].description,
-                                    textAlign: TextAlign.left),
+                                  
+                                       snapshot.data.value[index].description,
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(color: Colors.black, fontSize: 15)),
                                 new Text(
-                                    "Road Name: " +
+                                    "is Located along " +
                                         snapshot.data.value[index].roadname,
-                                    textAlign: TextAlign.left),
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(color: Colors.black, fontSize: 15)),
                                 new Text(
                                     "Bus Stop Code : " +
                                         snapshot.data.value[index].busstopcode,
-                                    textAlign: TextAlign.left),
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold)),
                                 new InkWell(
                                   child: Text(
                                     "Click to view in google maps ",

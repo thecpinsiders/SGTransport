@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/about.dart';
 
 import 'busarrival.dart';
 import 'operatinghours.dart';
@@ -23,6 +24,16 @@ class _homepageState extends State<homepage> {
               appBar: AppBar(
                 title: Text('SGTransport'),
                 actions: <Widget>[
+                IconButton(
+                    icon: Icon(
+                      Icons.info_outline,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => About()));
+                    },
+                  ),
                   IconButton(
                     icon: Icon(
                       Icons.account_circle_rounded,

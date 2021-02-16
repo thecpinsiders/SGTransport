@@ -262,7 +262,10 @@ class _BusArrivalState extends State<BusArrival> {
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
             ),
-          ),
+          ),              
+          SizedBox(
+                height: 20,
+              ),
           FutureBuilder(
             future: loadArriving(),
             builder: (context, snapshot) {
@@ -289,53 +292,67 @@ class _BusArrivalState extends State<BusArrival> {
                           "LSD") {
                         load = "Limited Standing";
                       }
+                      Color getColor(load) {
+                        if (snapshot.data.service[index].nextbus.load == "SEA") return Colors.green;
+                        if (snapshot.data.service[index].nextbus.load == "SDA") return Colors.orange;
+                        if (snapshot.data.service[index].nextbus.load == "LSD") return Colors.red;
+                      }
+                      
+                      String bustype;
+                      if (snapshot.data.service[index].nextbus.type == "SD") {
+                        bustype = "Single Decker";
+                      } else if (snapshot.data.service[index].nextbus.type ==
+                          "DD") {
+                        bustype = "Double Decker";
+                      } else if (snapshot.data.service[index].nextbus.type ==
+                          "BD") {
+                        bustype = "Bendy";
+                      }
                       return new Card(
                         child: new Column(
                           children: <Widget>[
-                            new Text(
-                                "Bus Stop Code : " + snapshot.data.busstopcode,
+                            new Text("Service :  " + snapshot.data.service[index].serviceno,
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold)),
                             new Text(
-                                "Service : " +
-                                    snapshot.data.service[index].serviceno,
+                               formattedtime + "    " +snapshot.data.service[index].nextbus.feature + "    " + bustype,
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: getColor(snapshot.data.service[index].nextbus.load),
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold)),
-                            new Text("Arrival time : " + formattedtime,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold)),
-                            new Text("Load : " + load,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold)),
-                            new Text(
-                                "WAB / NWAB : " +
-                                    snapshot
-                                        .data.service[index].nextbus.feature,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold)),
-                            new Text(
-                                "Bus Type: " +
-                                    snapshot.data.service[index].nextbus.type,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold)),
+                            // new Text("Arrival time : " + formattedtime,
+                            //     textAlign: TextAlign.left,
+                            //     style: TextStyle(
+                            //         color: Colors.black,
+                            //         fontSize: 15,
+                            //         fontWeight: FontWeight.bold)),
+                            // new Text("Load : " + load,
+                            //     textAlign: TextAlign.left,
+                            //     style: TextStyle(
+                            //         color: Colors.black,
+                            //         fontSize: 15,
+                            //         fontWeight: FontWeight.bold)),
+                            // new Text(
+                            //     "WAB / NWAB : " +
+                            //         snapshot
+                            //             .data.service[index].nextbus.feature,
+                            //     textAlign: TextAlign.left,
+                            //     style: TextStyle(
+                            //         color: Colors.black,
+                            //         fontSize: 15,
+                            //         fontWeight: FontWeight.bold)),
+                            // new Text(
+                            //     "Bus Type: " +
+                            //         snapshot.data.service[index].nextbus.type,
+                            //     textAlign: TextAlign.left,
+                            //     style: TextStyle(
+                            //         color: Colors.black,
+                            //         fontSize: 15,
+                            //         fontWeight: FontWeight.bold)),
                           ],
                         ),
                       );

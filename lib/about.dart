@@ -21,7 +21,7 @@ class About extends StatelessWidget {
                 "About SGTransport",
                 style: TextStyle(
                     fontSize: 25.0,
-                    color: Colors.blueGrey,
+                    color: Colors.black,
                     letterSpacing: 2.0,
                     fontWeight: FontWeight.w400),
               ),
@@ -34,14 +34,14 @@ class About extends StatelessWidget {
               SizedBox(
                 height: 60,
               ),
-              Text(
-                "Description: ",
-                style: TextStyle(
-                    fontSize: 25.0,
-                    color: Colors.blueGrey,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w400),
-              ),
+              // Text(
+              //   "About",
+              //   style: TextStyle(
+              //       fontSize: 25.0,
+              //       color: Colors.black,
+              //       letterSpacing: 2.0,
+              //       fontWeight: FontWeight.w400),
+              // ),
               SizedBox(
                 height: 10,
               ),
@@ -49,7 +49,7 @@ class About extends StatelessWidget {
                 "SGTransport is an all in one SG Bus arrival app for all 4 bus company. It can also search for bus stop and show you where the bus stop is located via google maps. It also shows the operating hours of a bus service at a particular bus stop.",
                 style: TextStyle(
                     fontSize: 15.0,
-                    color: Colors.blueGrey,
+                    color: Colors.black,
                     letterSpacing: 2.0,
                     fontWeight: FontWeight.w400),
               ),
@@ -60,9 +60,9 @@ class About extends StatelessWidget {
                 "Developed By: Jemond Lee",
                 style: TextStyle(
                     fontSize: 18.0,
-                    color: Colors.black45,
+                    color: Colors.black,
                     letterSpacing: 2.0,
-                    fontWeight: FontWeight.w300),
+                    fontWeight: FontWeight.w400),
               ),
               SizedBox(
                 height: 10,
@@ -71,9 +71,9 @@ class About extends StatelessWidget {
                 "Version 1.0.0",
                 style: TextStyle(
                     fontSize: 18.0,
-                    color: Colors.black45,
+                    color: Colors.black,
                     letterSpacing: 2.0,
-                    fontWeight: FontWeight.w300),
+                    fontWeight: FontWeight.w400),
               ),
               buildButton(
                 text: 'Email Us!',
